@@ -2,15 +2,15 @@ build/intermediate/Debug/juce_VST_Wrapper_bb62e93d.o: \
  ../../JuceLibraryCode/modules/juce_audio_plugin_client/VST/juce_VST_Wrapper.cpp \
  ../../JuceLibraryCode/AppConfig.h \
  ../../JuceLibraryCode/modules/juce_audio_plugin_client/VST/../utility/juce_CheckSettingMacros.h \
- /home/mds/csc344/csc344-wi14/public.sdk/source/vst2.x/audioeffectx.h \
- /home/mds/csc344/csc344-wi14/public.sdk/source/vst2.x/audioeffect.h \
- /home/mds/csc344/csc344-wi14/pluginterfaces/vst2.x/aeffect.h \
- /home/mds/csc344/csc344-wi14/pluginterfaces/vst2.x/aeffectx.h \
- /home/mds/csc344/csc344-wi14/public.sdk/source/vst2.x/aeffeditor.h \
- /home/mds/csc344/csc344-wi14/public.sdk/source/vst2.x/audioeffectx.h \
- /home/mds/csc344/csc344-wi14/public.sdk/source/vst2.x/audioeffectx.cpp \
- /home/mds/csc344/csc344-wi14/public.sdk/source/vst2.x/aeffeditor.h \
- /home/mds/csc344/csc344-wi14/public.sdk/source/vst2.x/audioeffect.cpp \
+ /home/mds/csc344/csc344-wi14/vstsdk2.4/public.sdk/source/vst2.x/audioeffectx.h \
+ /home/mds/csc344/csc344-wi14/vstsdk2.4/public.sdk/source/vst2.x/audioeffect.h \
+ /home/mds/csc344/csc344-wi14/vstsdk2.4/pluginterfaces/vst2.x/aeffect.h \
+ /home/mds/csc344/csc344-wi14/vstsdk2.4/pluginterfaces/vst2.x/aeffectx.h \
+ /home/mds/csc344/csc344-wi14/vstsdk2.4/public.sdk/source/vst2.x/aeffeditor.h \
+ /home/mds/csc344/csc344-wi14/vstsdk2.4/public.sdk/source/vst2.x/audioeffectx.h \
+ /home/mds/csc344/csc344-wi14/vstsdk2.4/public.sdk/source/vst2.x/audioeffectx.cpp \
+ /home/mds/csc344/csc344-wi14/vstsdk2.4/public.sdk/source/vst2.x/aeffeditor.h \
+ /home/mds/csc344/csc344-wi14/vstsdk2.4/public.sdk/source/vst2.x/audioeffect.cpp \
  ../../JuceLibraryCode/modules/juce_audio_plugin_client/VST/../utility/juce_IncludeModuleHeaders.h \
  ../../JuceLibraryCode/modules/juce_audio_plugin_client/VST/../utility/../juce_audio_plugin_client.h \
  ../../JuceLibraryCode/modules/juce_audio_plugin_client/VST/../utility/../../juce_gui_basics/juce_gui_basics.h \
