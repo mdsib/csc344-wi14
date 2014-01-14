@@ -1,0 +1,176 @@
+Massimo Siboldi's wav-crazifier.
+<input type="text" placeholder="enter url" value="https://dl.dropboxusercontent.com/s/dyneumir0j8eoxw/test.wav"></input>
+<button onclick="loadSound()">ok</button>
+
+
+<script>
+var buffer = null;
+var view = null;
+window.AudioContext = window.AudioContext || window.webkitAudioContext;
+var context = new AudioContext();
+var results;
+var params;
+var audioBuffer;
+var leftChannel;
+var rightChannel;
+var newSound = null;
+
+//From Eric Buckthal's github: saving the wav
+function forceDownload(blob, filename){
+   var url = (window.URL || window.webkitURL).createObjectURL(blob);
+   var link = window.document.createElement('a');
+   link.href = url;
+   link.download = filename || 'output.wav';
+   var click = document.createEvent("Event");
+   click.initEvent("click", true, true);
+   link.dispatchEvent(click);
+}
+
+
+function loadSound() {
+   var req = new XMLHttpRequest();
+   var url = document.getElementsByTagName("input")[0].value;
+   //var url = "./test.wav";
+   req.open('GET', url, true);
+   req.responseType = 'arraybuffer';
+   req.onload = function() {
+      buffer = req.response;
+      decodeWAV(buffer, function() {
+         mix();
+         var manipulatedSamples = intertwine(leftChannel, rightChannel);
+         newSound = encodeWAV(manipulatedSamples);
+         decodeWAV(newSound.buffer, function() {
+            console.log('play sound here');
+            playSound(audioBuffer);
+            forceDownload(new Blob([newSound], {type:'audio/wav'}),"newSound.wav");
+         });
+      }); 
+   }
+   req.send();
+}
+
+function mix() {
+   var i = 0;
+   var newLeft = new Array();
+   var newRight = new Array();
+   var randNum;
+   while (i < leftChannel.length) {
+      randNum = Math.random() * 200000;
+      randNum = Math.floor(randNum);
+      console.log(randNum);
+      for (var j = randNum; j < randNum * 3; j++) {
+         if ( i >= leftChannel.length) break;
+         newLeft[i] = leftChannel[j];
+         newRight[i] = rightChannel[j];
+         i++;
+      }
+      //newLeft[i] = leftChannel[leftChannel.length - i];
+      //newRight[i] = rightChannel[rightChannel.length - i];
+   }
+   leftChannel = newLeft;
+   rightChannel = newRight;
+}
+
+
+
+//code graciously lifted from the honorable Matt Diamond:
+//https://github.com/mattdiamond/Recorderjs/blob/master/recorderWorker.js
+function floatTo16BitPCM(output, offset, input){
+  for (var i = 0; i < input.length; i++, offset+=2){
+    var s = Math.max(-1, Math.min(1, input[i]));
+    output.setInt16(offset, s < 0 ? s * 0x8000 : s * 0x7FFF, true);
+  }
+}
+
+function writeString(view, offset, string){
+  for (var i = 0; i < string.length; i++){
+    view.setUint8(offset + i, string.charCodeAt(i));
+  }
+}
+
+function encodeWAV(samples){
+  var buffer = new ArrayBuffer(44 + samples.length * 2);
+  var view = new DataView(buffer);
+
+  /* RIFF identifier */
+  writeString(view, 0, 'RIFF');
+  /* file length */
+  view.setUint32(4, 32 + samples.length, true);
+  /* RIFF type */
+  writeString(view, 8, 'WAVE');
+  /* format chunk identifier */
+  writeString(view, 12, 'fmt ');
+  /* format chunk length */
+  view.setUint32(16, 16, true);
+  /* sample format (raw) */
+  view.setUint16(20, 1, true);
+  /* channel count */
+  view.setUint16(22, params.channelCount, true);
+  /* sample rate */
+  view.setUint32(24, params.sampleRate, true);
+  /* byte rate (sample rate * block align) */
+  view.setUint32(28, params.byteRate, true);
+  /* block align (channel count * bytes per sample) */
+  view.setUint16(32, params.blockAlign, true);
+  /* bits per sample */
+  view.setUint16(34, params.bitsPerSample, true);
+  /* data chunk identifier */
+  writeString(view, 36, 'data');
+  /* data chunk length */
+  view.setUint32(40, samples.length * 2, true);
+
+  floatTo16BitPCM(view, 44, samples);
+
+  return view;
+}
+
+//decodeWAV: separates header and data information, returns object
+//with unique header info and an applicable dataView
+//{params,samples}
+function decodeWAV(buffer, callback) {
+   var view = new DataView(buffer);
+   var a1 = new Array();
+   var a2 = new Array();
+   params = {
+      channelCount: view.getUint16(22, true),
+      sampleRate: view.getUint32(24, true),
+      byteRate: view.getUint32(28, true),
+      blockAlign: view.getUint16(32, true),
+      bitsPerSample: view.getUint16(34, true)
+   }
+
+   context.decodeAudioData(buffer, function(data) {
+      audioBuffer = data;
+      leftChannel = data.getChannelData(0);
+      rightChannel = data.getChannelData(1);
+      console.log('decoded:');
+      console.log(data);
+      callback();
+   });
+}
+
+function intertwine(leftC,rightC) {
+   var result = new Array();
+   var i;
+   var j = 0;
+   for (i = 0; i < (leftC.length + rightC.length); i++) {
+      result[j++] = leftC[i];
+      result[j++] = rightC[i];
+   }
+   return result;
+}
+
+function playSound(buffer) {
+   console.log('beginning link');
+   var source = context.createBufferSource();
+   console.log(source);
+   source.buffer = buffer;
+   console.log(source.buffer);
+   source.connect(context.destination);
+   console.log('source connected?');
+   source.start(0);
+   console.log('source played');
+}
+
+
+</script>
