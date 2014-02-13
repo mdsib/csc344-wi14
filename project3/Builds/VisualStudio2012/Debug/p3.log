@@ -1,0 +1,77 @@
+﻿Build started 2/12/2014 6:00:03 PM.
+     1>Project "F:\home\mds\csc344\csc344-wi14\project3\Builds\VisualStudio2012\p3.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I..\..\JuceLibraryCode /I..\..\JuceLibraryCode\modules /Ic:\SDKs\vstsdk2.4 /ZI /nologo /W4 /WX- /MP /Od /Oy- /D WIN32 /D _WINDOWS /D DEBUG /D _DEBUG /D JUCER_VS2012_78A501F=1 /D JUCE_APP_VERSION=1.0.0 /D JUCE_APP_VERSION_HEX=0x10000 /D _WINDLL /Gm- /EHsc /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"Debug\\" /Fd"Debug\\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Source\PluginProcessor.cpp ..\..\Source\PluginEditor.cpp ..\..\JuceLibraryCode\modules\juce_audio_plugin_client\AAX\juce_AAX_Wrapper.cpp ..\..\JuceLibraryCode\modules\juce_audio_basics\juce_audio_basics.cpp ..\..\JuceLibraryCode\modules\juce_audio_devices\juce_audio_devices.cpp ..\..\JuceLibraryCode\modules\juce_audio_formats\juce_audio_formats.cpp ..\..\JuceLibraryCode\modules\juce_audio_processors\juce_audio_processors.cpp ..\..\JuceLibraryCode\modules\juce_core\juce_core.cpp ..\..\JuceLibraryCode\modules\juce_cryptography\juce_cryptography.cpp ..\..\JuceLibraryCode\modules\juce_data_structures\juce_data_structures.cpp ..\..\JuceLibraryCode\modules\juce_events\juce_events.cpp ..\..\JuceLibraryCode\modules\juce_graphics\juce_graphics.cpp ..\..\JuceLibraryCode\modules\juce_gui_basics\juce_gui_basics.cpp ..\..\JuceLibraryCode\modules\juce_gui_extra\juce_gui_extra.cpp ..\..\JuceLibraryCode\modules\juce_opengl\juce_opengl.cpp ..\..\JuceLibraryCode\modules\juce_audio_plugin_client\utility\juce_PluginUtilities.cpp ..\..\JuceLibraryCode\modules\juce_video\juce_video.cpp ..\..\JuceLibraryCode\modules\juce_audio_plugin_client\VST\juce_VST_Wrapper.cpp
+         PluginProcessor.cpp
+         PluginEditor.cpp
+     1>f:\home\mds\csc344\csc344-wi14\project3\source\plugineditor.cpp(133): warning C4189: 'keyboardHeight' : local variable is initialized but not referenced
+     1>f:\home\mds\csc344\csc344-wi14\project3\source\plugineditor.cpp(238): warning C4100: 'pos' : unreferenced formal parameter
+     1>f:\home\mds\csc344\csc344-wi14\project3\source\pluginprocessor.cpp(90): warning C4100: 'index' : unreferenced formal parameter
+     1>f:\home\mds\csc344\csc344-wi14\project3\source\pluginprocessor.cpp(105): warning C4100: 'index' : unreferenced formal parameter
+     1>f:\home\mds\csc344\csc344-wi14\project3\source\pluginprocessor.cpp(110): warning C4100: 'index' : unreferenced formal parameter
+     1>f:\home\mds\csc344\csc344-wi14\project3\source\pluginprocessor.cpp(153): warning C4100: 'index' : unreferenced formal parameter
+     1>f:\home\mds\csc344\csc344-wi14\project3\source\pluginprocessor.cpp(157): warning C4100: 'index' : unreferenced formal parameter
+     1>f:\home\mds\csc344\csc344-wi14\project3\source\pluginprocessor.cpp(162): warning C4100: 'newName' : unreferenced formal parameter
+     1>f:\home\mds\csc344\csc344-wi14\project3\source\pluginprocessor.cpp(162): warning C4100: 'index' : unreferenced formal parameter
+     1>f:\home\mds\csc344\csc344-wi14\project3\source\pluginprocessor.cpp(167): warning C4100: 'samplesPerBlock' : unreferenced formal parameter
+     1>f:\home\mds\csc344\csc344-wi14\project3\source\pluginprocessor.cpp(167): warning C4100: 'sampleRate' : unreferenced formal parameter
+     1>f:\home\mds\csc344\csc344-wi14\project3\source\pluginprocessor.cpp(179): warning C4100: 'midiMessages' : unreferenced formal parameter
+     1>f:\home\mds\csc344\csc344-wi14\project3\source\pluginprocessor.cpp(335): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>f:\home\mds\csc344\csc344-wi14\project3\source\pluginprocessor.cpp(336): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>f:\home\mds\csc344\csc344-wi14\project3\source\plugineditor.cpp(201): warning C4505: 'timeToTimecodeString' : unreferenced local function has been removed (..\..\Source\PluginEditor.cpp)
+     1>f:\home\mds\csc344\csc344-wi14\project3\source\plugineditor.cpp(220): warning C4505: 'ppqToBarsBeatsString' : unreferenced local function has been removed (..\..\Source\PluginEditor.cpp)
+         juce_AAX_Wrapper.cpp
+         juce_audio_basics.cpp
+         juce_audio_devices.cpp
+         juce_audio_formats.cpp
+         juce_audio_processors.cpp
+         juce_core.cpp
+         juce_cryptography.cpp
+         juce_data_structures.cpp
+         juce_events.cpp
+         juce_graphics.cpp
+         juce_gui_basics.cpp
+         juce_gui_extra.cpp
+         juce_opengl.cpp
+         juce_PluginUtilities.cpp
+         juce_video.cpp
+         juce_VST_Wrapper.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I..\..\JuceLibraryCode /I..\..\JuceLibraryCode\modules /Ic:\SDKs\vstsdk2.4 /ZI /nologo /W4 /WX- /MP /Od /Oy- /D WIN32 /D _WINDOWS /D DEBUG /D _DEBUG /D JUCER_VS2012_78A501F=1 /D JUCE_APP_VERSION=1.0.0 /D JUCE_APP_VERSION_HEX=0x10000 /D _WINDLL /Gm- /EHsc /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"Debug\\" /Fd"Debug\\vc110.pdb" /Gz /TP /analyze- /errorReport:prompt ..\..\JuceLibraryCode\modules\juce_audio_plugin_client\RTAS\juce_RTAS_DigiCode1.cpp ..\..\JuceLibraryCode\modules\juce_audio_plugin_client\RTAS\juce_RTAS_DigiCode2.cpp ..\..\JuceLibraryCode\modules\juce_audio_plugin_client\RTAS\juce_RTAS_DigiCode3.cpp ..\..\JuceLibraryCode\modules\juce_audio_plugin_client\RTAS\juce_RTAS_WinUtilities.cpp ..\..\JuceLibraryCode\modules\juce_audio_plugin_client\RTAS\juce_RTAS_Wrapper.cpp
+         juce_RTAS_DigiCode1.cpp
+         juce_RTAS_DigiCode2.cpp
+         juce_RTAS_DigiCode3.cpp
+         juce_RTAS_WinUtilities.cpp
+         juce_RTAS_Wrapper.cpp
+       ResourceCompile:
+         C:\Program Files (x86)\Windows Kits\8.0\bin\x86\rc.exe /D _DEBUG /l"0x0409" /nologo /fo"Debug\resources.res" .\resources.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Debug\\p3.dll" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /NODEFAULTLIB:libcmt.lib /NODEFAULTLIB:msvcrt.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"Debug\\p3.pdb" /SUBSYSTEM:WINDOWS /LARGEADDRESSAWARE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\Debug\p3.lib" /MACHINE:X86 /SAFESEH:NO /DLL Debug\resources.res
+         Debug\\PluginProcessor.obj
+         Debug\\PluginEditor.obj
+         Debug\\juce_AAX_Wrapper.obj
+         Debug\\juce_audio_basics.obj
+         Debug\\juce_audio_devices.obj
+         Debug\\juce_audio_formats.obj
+         Debug\\juce_audio_processors.obj
+         Debug\\juce_core.obj
+         Debug\\juce_cryptography.obj
+         Debug\\juce_data_structures.obj
+         Debug\\juce_events.obj
+         Debug\\juce_graphics.obj
+         Debug\\juce_gui_basics.obj
+         Debug\\juce_gui_extra.obj
+         Debug\\juce_opengl.obj
+         Debug\\juce_PluginUtilities.obj
+         Debug\\juce_RTAS_DigiCode1.obj
+         Debug\\juce_RTAS_DigiCode2.obj
+         Debug\\juce_RTAS_DigiCode3.obj
+         Debug\\juce_RTAS_WinUtilities.obj
+         Debug\\juce_RTAS_Wrapper.obj
+         Debug\\juce_video.obj
+         Debug\\juce_VST_Wrapper.obj
+         p3.vcxproj -> F:\home\mds\csc344\csc344-wi14\project3\Builds\VisualStudio2012\.\Debug\p3.dll
+     1>Done Building Project "F:\home\mds\csc344\csc344-wi14\project3\Builds\VisualStudio2012\p3.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:02:36.43
