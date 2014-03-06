@@ -1,0 +1,8 @@
+{
+   "name":"ALGOCOMPOMIZER",
+   "author":"Massimo Siboldi",
+   "private":true,
+   "dependencies": {
+      "jsmidgen": "*"
+   }
+}
